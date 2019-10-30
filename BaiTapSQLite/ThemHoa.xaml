@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BaiTapSQLite.ThemHoa"
+             Title="Thêm Hoa">
+    <ContentPage.Content>
+        <Grid Padding="20" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Text="Mã loại"/>
+            <Label Grid.Column="0" Grid.Row="1" Text="Tên hoa"/>
+            <Label Grid.Column="0" Grid.Row="2" Text="Hình"/>
+            <Label Grid.Column="0" Grid.Row="3" Text="Giá bán"/>
+            <Label Grid.Column="0" Grid.Row="4" Text="Mô tả"/>
+
+            <Picker x:Name="pickerLoaiHoa"  Grid.Column="1" Grid.Row="0" Title="Chọn loại hoa" ItemDisplayBinding="{Binding TenLoai}"></Picker>
+            <Entry x:Name="txtTenHoa" Grid.Column="1" Grid.Row="1" />
+            <Picker x:Name="pickerHinh" Grid.Column="1" Grid.Row="2" Title="Chọn hình"/>
+            <Entry x:Name="txtGiaBan" Grid.Column="1" Grid.Row="3" Keyboard="Numeric"  />
+            <Editor x:Name="txtMoTa" Grid.Column="1" Grid.Row="4"
+                    BackgroundColor="WhiteSmoke"
+                    HeightRequest="200"
+                    WidthRequest="300"
+                    HorizontalOptions="CenterAndExpand"/>
+
+            <Button Grid.Column="0" Grid.Row="5" Text="Thêm hoa"
+                    BackgroundColor="LightSkyBlue"
+                    Clicked="btn_themhoa"/>
+            <Button Grid.Column="1" Grid.Row="5" Text="Xoá hoa"
+                    BackgroundColor="LightSkyBlue"
+                    Clicked="btn_xoahoa"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
